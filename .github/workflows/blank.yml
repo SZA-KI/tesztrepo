@@ -30,7 +30,7 @@ jobs:
         with:
           args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been successfully deployed.'
       - name: Discord notification on fail
-        if: ${{ fail() }}
+        if: ${{ failure() }}
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
