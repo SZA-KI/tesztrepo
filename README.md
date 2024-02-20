@@ -2,4 +2,4 @@
 Testing the discord webhook with actions
 
 # CHANGES
-Discord JSON variable
+Discord JSON variable - v2
