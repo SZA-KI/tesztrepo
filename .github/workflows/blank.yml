@@ -31,7 +31,7 @@ jobs:
         with:
           args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been successfully deployed.'
       - name: Discord notification on fail
-        if: ${{ failure() }}
+        if: ${{ fail() }}
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_EMBED: ${{ toJson(vars.DISCORD_JSON) }}
