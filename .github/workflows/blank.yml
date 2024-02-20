@@ -26,7 +26,7 @@ jobs:
         if: ${{ success() }}
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          DISCORD_EMBED: ${{ vars.DISCORD_JSON }}
+          DISCORD_EMBED: ${{ toJson(vars.DISCORD_JSON) }}
         uses: Ilshidur/action-discord@master
         with:
           args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been successfully deployed.'
@@ -34,7 +34,7 @@ jobs:
         if: ${{ failure() }}
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          DISCORD_EMBED: ${{ vars.DISCORD_JSON }}
+          DISCORD_EMBED: ${{ toJson(vars.DISCORD_JSON) }}
         uses: Ilshidur/action-discord@master
         with:
           args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been faild to deployed.'
