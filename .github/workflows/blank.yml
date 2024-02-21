@@ -28,6 +28,8 @@ jobs:
           
   # build job to perform the neccessary actions
   build:
+    needs: push-notification
+    
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
